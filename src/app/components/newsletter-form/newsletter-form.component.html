@@ -1,0 +1,31 @@
+<section class="form-section" >
+  <div class="text">
+    <h3>
+      Fique por dentro das tendências
+    </h3>
+    <p>
+      Receba as últimas notícias e atualizações sobre o mundo da tecnologia.
+    </p>
+  </div>
+  <form [formGroup]="newsletterForm">
+    <label for="name">Name</label>
+    <input
+      formControlName="name"
+      id="name"
+      type="text"
+    >
+    <label for="email">Email</label>
+    <input
+      formControlName="email"
+      id="email"
+      type="text"
+    >
+    <btn-primary
+      (submit)="onSubmit()"
+      btn-text="Se inscreva"
+      variant="secondary"
+      [disabled]="!newsletterForm.valid"
+      [loading]="loading()"
+    ></btn-primary>
+  </form>
+</section>
